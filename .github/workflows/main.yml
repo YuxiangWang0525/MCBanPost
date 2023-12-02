@@ -27,7 +27,7 @@ jobs:
       - name: Build for MacOS
         run: GOOS=darwin GOARCH=amd64 go build -o MCBanPost_MacOS
 
-      - name: Create Release
+            - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -37,6 +37,11 @@ jobs:
           release_name: Release ${{ github.run_number }}
           draft: false
           prerelease: false
+        permissions:
+          contents: write
+          packages: write
+          releases: write
+
 
       - name: Upload Windows Release Asset
         id: upload_windows_release_asset
