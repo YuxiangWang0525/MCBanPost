@@ -37,10 +37,6 @@ jobs:
           release_name: Release ${{ github.run_number }}
           draft: false
           prerelease: false
-        permissions:
-          contents: write
-          packages: write
-          releases: write
 
 
       - name: Upload Windows Release Asset
