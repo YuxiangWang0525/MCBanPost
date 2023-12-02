@@ -19,13 +19,13 @@ jobs:
           go-version: 1.x 
 
       - name: Build for Windows
-        run: GOOS=windows GOARCH=amd64 go build -o MoeDigitalSpiderPro_Windows.exe
+        run: GOOS=windows GOARCH=amd64 go build -o MCBanPost.exe
 
       - name: Build for Ubuntu
-        run: go build -o MoedigitalSpiderPro_Linux
+        run: go build -o MCBanPost_Linux
 
       - name: Build for MacOS
-        run: GOOS=darwin GOARCH=amd64 go build -o MoedigitalSpiderPro_MacOS
+        run: GOOS=darwin GOARCH=amd64 go build -o MCBanPost_MacOS
 
       - name: Create Release
         id: create_release
@@ -45,8 +45,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./MoeDigitalSpiderPro_Windows.exe
-          asset_name: MoeDigitalSpiderPro_Windows.exe
+          asset_path: ./MCBanPost.exe
+          asset_name: MCBanPost.exe
           asset_content_type: application/octet-stream
 
       - name: Upload Ubuntu Release Asset
@@ -56,8 +56,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./MoedigitalSpiderPro_Linux
-          asset_name: MoedigitalSpiderPro_Linux
+          asset_path: ./MCBanPost_Linux
+          asset_name: MCBanPost_Linux
           asset_content_type: application/octet-stream
 
       - name: Upload MacOS Release Asset
@@ -67,7 +67,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./MoedigitalSpiderPro_MacOS
-          asset_name: MoedigitalSpiderPro_MacOS
+          asset_path: ./MCBanPost_MacOS
+          asset_name: MCBanPost_MacOS
           asset_content_type: application/octet-stream
 
