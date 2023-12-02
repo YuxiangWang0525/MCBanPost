@@ -29,7 +29,7 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1.1.0
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -40,7 +40,7 @@ jobs:
 
       - name: Upload Windows Release Asset
         id: upload_windows_release_asset
-        uses: actions/upload-release-asset@v2.1.4
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -51,7 +51,7 @@ jobs:
 
       - name: Upload Ubuntu Release Asset
         id: upload_ubuntu_release_asset
-        uses: actions/upload-release-asset@v2.1.4
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -62,7 +62,7 @@ jobs:
 
       - name: Upload MacOS Release Asset
         id: upload_macos_release_asset
-        uses: actions/upload-release-asset@v2.1.4
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
